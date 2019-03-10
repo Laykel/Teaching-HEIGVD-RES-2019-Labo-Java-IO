@@ -10,8 +10,8 @@ public class Utils {
 
   private static final Logger LOG = Logger.getLogger(Utils.class.getName());
 
-  // Different systems' line separators (order is important)
-  private static final String[] separators = new String[] {"\r\n", "\n", "\r"};
+  // Different systems' line separators (order of elements is important)
+  private static final String[] SEPARATORS = new String[] {"\r\n", "\n", "\r"};
 
   /**
    * This method looks for the next new line separators (\r, \n, \r\n) to extract
@@ -27,8 +27,10 @@ public class Utils {
       int index = 0;
 
       // Iterate through possible separator types
-      for (String separator : separators) {
+      for (String separator : SEPARATORS) {
           // If the text uses this type of separator
+          // This is why the order of SEPARATORS is important
+          // (\r\n contains the other separators but not the other way around)
           if (lines.contains(separator)) {
               // Set the index to the end of the first line
               index = lines.indexOf(separator) + separator.length();
