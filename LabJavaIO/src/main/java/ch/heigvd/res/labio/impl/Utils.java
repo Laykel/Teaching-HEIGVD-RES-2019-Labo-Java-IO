@@ -10,7 +10,7 @@ public class Utils {
 
   private static final Logger LOG = Logger.getLogger(Utils.class.getName());
 
-  // Different systems' separators (order is important)
+  // Different systems' line separators (order is important)
   private static final String[] separators = new String[] {"\r\n", "\n", "\r"};
 
   /**
