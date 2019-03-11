@@ -40,6 +40,7 @@ public class UpperCaseFilterWriter extends FilterWriter {
       // We make it uppercase
       c = Character.toUpperCase(c);
     }
+
     // And we call the parent's method to write
     super.write(c);
   }

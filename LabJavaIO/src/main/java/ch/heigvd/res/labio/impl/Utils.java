@@ -3,6 +3,8 @@ package ch.heigvd.res.labio.impl;
 import java.util.logging.Logger;
 
 /**
+ * I don't use this class anywhere, which is worrying me.
+ * I guess I'll just try not to think about it too much.
  *
  * @author Olivier Liechti
  */
