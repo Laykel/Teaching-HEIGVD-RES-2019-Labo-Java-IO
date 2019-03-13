@@ -27,7 +27,7 @@ public class DFSFileExplorer implements IFileExplorer {
 
         // Get list of files in directory
         File[] files = rootDirectory.listFiles();
-        // Sort files so that we always visit them in order
+        // Sort files so that we always visit them in the same order
         Arrays.sort(files);
 
         // Explore each node recursively

@@ -45,6 +45,11 @@ public class FileNumberingFilterWriter extends FilterWriter {
 
   @Override
   public void write(int c) throws IOException {
+    /*
+     * Quand je lis un \n, je sonne la cloche. Par contre, quand je lis un \r, je ne sonne pas tout suite.
+     * J'attends d'avoir lu le caractère suivant ou d'avoir atteint la fin du fichier
+     */
+
     // If the previous character was \r and the current isn't \n,
     // we apply the start of line changes
     if (previousChar == '\r' && c != '\n') {
@@ -70,12 +75,5 @@ public class FileNumberingFilterWriter extends FilterWriter {
     // Set previous character
     previousChar = (char) c;
   }
-  /*
-   * Quand je lis un \r, je sonne la cloche
-   * Par contre, quand je lis un \n, je me demande si je viens de lire un \r et, dans ce cas, je ne fais rien
-   * ou
-   * Quand je lis un \n, je sonne la cloche. Par contre, quand je lis un \r, je ne sonne pas tout suite.
-   * J'attends d'avoir lu le caractère suivant ou d'avoir atteint la fin du fichier
-   */
 
 }
